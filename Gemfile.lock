@@ -149,6 +149,7 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.6.0)
     rexml (3.2.5)
+    rollbar (3.4.0)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -216,6 +217,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7)
+  rollbar
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   spring
