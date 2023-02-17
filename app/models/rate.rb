@@ -23,12 +23,9 @@ class Rate < ApplicationRecord
   end
 
   def self.update_value key
-    p "actualizando data..."
-    p "#{API_KEY}"
     response = URI.open("https://openexchangerates.org/api/latest.json?app_id=#{API_KEY}").read
     timestamp = JSON.parse(response)["timestamp"] if response.present? && response.include?("timestamp")
     if timestamp.present?
-      p "guardando..."
       Rate.set_key_value(key, response)
     end
     response
@@ -42,7 +39,6 @@ class Rate < ApplicationRecord
       if old_data.updated_at < EACH_HOURS.hours.ago
         Rate.update_value("rates")
       else
-        p "Aun no pasan #{EACH_HOURS} horas"
         get_value("rates")
       end
     else
